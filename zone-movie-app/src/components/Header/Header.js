@@ -6,11 +6,13 @@ const Header = () => {
   return (
     <div className="rmdb-header">
       <div className="rmdb-header-content">
+        <h1 className="rmdb-slogan">Making What Matters</h1>
         <img
           className="rmdb-logo"
           src="./images/zoneLogo.svg"
           alt="rmdb-logo"
         />
+
         <img
           className="rmdb-tmdb-logo"
           src="./images/tmdb_logo.png"

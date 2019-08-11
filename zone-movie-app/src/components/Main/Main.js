@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { API_KEY, PATH_BASE, PATH_POPULAR, PATH_MOVIE } from "../../api";
+import { API_KEY, PATH_BASE, PATH_POPULAR, PATH_MOVIE } from "../../api/api";
 
-import "./index.css";
+import "./Main.css";
 
 class Main extends Component {
   constructor(props) {

@@ -18,19 +18,20 @@
 
 .rmdb-logo {
   width: 300px;
-  margin-top: 20px;
   float: left;
   left: 134px;
   height: 51px;
   top: 66px;
   z-index: 1;
   width: 140px;
+  margin-top: 3px;
 }
 
 .rmdb-tmdb-logo {
   width: 122px;
   margin-top: 25px;
   float: right;
+  margin-top: 9px !important;
 }
 
 @media screen and (max-width: 500px) {
@@ -38,15 +39,18 @@
     max-width: 1280px;
     min-height: 0px;
   }
+}
 
-  .rmdb-tmdb-logo {
-    display: inline-block;
-    width: 80px;
-    margin-top: 0px;
-  }
+.rmdb-tmdb-logo {
+  display: inline-block;
+  width: 80px;
+  margin-top: 0px;
+}
 
-  .rmdb-logo {
-    width: 150px;
-    margin-top: 5px;
-  }
+.rmdb-slogan {
+  color: white;
+  display: inline;
+  font-family: "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial",
+    sans-serif;
+  margin-left: 151px;
 }
