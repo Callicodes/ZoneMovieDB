@@ -20,7 +20,9 @@ class SearchBar extends Component {
     )
       .then(response => response.json())
       .then(result =>
-        this.props.history.push(`/search?query=${searchTerm}`, result)
+        this.setState({
+          result
+        })
       );
   };
 
