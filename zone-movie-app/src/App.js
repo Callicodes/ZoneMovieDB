@@ -6,23 +6,39 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
 // import { PATH_POPULAR } from "./api/api";
 import { PATH_POPULAR, PATH_TOP_RATED, PATH_GENRE } from "./api/api";
+import { BrowserRouter, Route } from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="App-main">
-        <div className="App-sidebar-wrapper">
-          <Sidebar />
-        </div>
-        <div className="App-content-wrapper">
-          {/* <Main title="Popular" /> */}
-          <Main title="Popular" section={PATH_POPULAR} />
-          <Main title="Top Rated" section={PATH_POPULAR} />
-          <Main title="Coming Soon" section={PATH_GENRE} />
-          {/* <h1 className="App-main-title">Main Title</h1> */}
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <div className="App-main">
+          <div className="App-sidebar-wrapper">
+            <Sidebar />
+          </div>
+          <div className="App-content-wrapper">
+            {/* <Main title="Popular" /> */}
+            <Route
+              exact
+              path="/"
+              render={() => <Main title="Popular" section={PATH_POPULAR} />}
+            />
+            <Route
+              exact
+              path="/top-rated"
+              render={() => <Main title="Top Rated" section={PATH_TOP_RATED} />}
+            />
+            <Route
+              exact
+              path="/genre/movie/list"
+              render={() => <Main title="Genre" section={PATH_GENRE} />}
+            />
+            {/* <h1 className="App-main-title">Main Title</h1> */}
+          </div>
         </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

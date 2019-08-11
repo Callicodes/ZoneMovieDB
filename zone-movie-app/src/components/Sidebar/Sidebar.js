@@ -15,7 +15,7 @@ const Sidebar = () => {
           <a href="/top-rated">Top Rated</a>
         </li>
         <li className="sidebar-menu__item">
-          <a href="/coming-soon">Coming soon</a>
+          <a href="/genre/movie/list">Genre</a>
         </li>
       </ul>
     </div>
