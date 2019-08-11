@@ -7,9 +7,28 @@ class SearchBar extends Component {
     super(props);
 
     this.state = {
-      searchTerm: ""
+      searchTerm: "",
+      result: null
     };
   }
+
+  getSearchMovies = searchTerm => {
+    fetch(
+      `${PATH_BASE}${PATH_SEARCH}${PATH_MOVIE}?api_key=${API_KEY}&query=${searchTerm}`
+    )
+      .then(response => response.json())
+      .then(result =>
+        this.setState({
+          result
+        })
+      );
+  };
+
+  handleSearchSubmit = e => {
+    e.preventDefault();
+    const { searchTerm } = this.state;
+    this.getSearchMovies(searchTerm);
+  };
 
   handleSearchChange = e => {
     this.setState({
