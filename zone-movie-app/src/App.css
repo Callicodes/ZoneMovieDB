@@ -31,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+.App-main {
+  display: grid;
+  grid-template-columns: 15% auto;
+  min-height: 100vh;
+}
+
+.App-sidebar-wrapper {
+  background-color: #191c1f;
+}
+
+.App-content-wrapper {
+  padding: 25px 2em;
+  background-color: #222b31;
+  color: #fff;
+}
