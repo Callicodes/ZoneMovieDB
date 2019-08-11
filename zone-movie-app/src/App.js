@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Main from "./components/Main/Main";
+import { PATH_POPULAR } from "./api/api";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
           <Sidebar />
         </div>
         <div className="App-content-wrapper">
-          <Main title="Popular" />
+          {/* <Main title="Popular" /> */}
+          <Main title="Popular" section={PATH_POPULAR} />
           {/* <h1 className="App-main-title">Main Title</h1> */}
         </div>
       </div>
