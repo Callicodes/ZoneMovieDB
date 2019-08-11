@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { API_KEY, PATH_BASE, PATH_POPULAR, PATH_MOVIE } from "../../api/api";
-
 import "./Main.css";
+import List from "../../components/List/List";
 
 class Main extends Component {
   constructor(props) {
@@ -33,9 +33,14 @@ class Main extends Component {
   };
 
   render() {
+    const { popularMovies } = this.state;
+    const { results } = popularMovies;
+    console.log({ popularMovies, results });
+
     return (
       <div>
         <h1 className="App-main-title">{this.props.title}</h1>
+        {results && <List list={results} />}
       </div>
     );
   }

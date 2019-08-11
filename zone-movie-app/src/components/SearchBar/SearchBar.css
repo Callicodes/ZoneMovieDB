@@ -3,6 +3,7 @@
 
 .search-movie-input {
   width: 93%;
+  height: 0px;
   padding: 38px;
   font-size: 20px;
   background-color: #145035;
