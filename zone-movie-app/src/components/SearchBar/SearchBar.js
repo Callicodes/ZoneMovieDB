@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { API_KEY, PATH_BASE, PATH_SEARCH, PATH_MOVIE } from "../../api/api";
 
 import "./SearchBar.css";
 
@@ -24,12 +26,6 @@ class SearchBar extends Component {
       );
   };
 
-  handleSearchSubmit = e => {
-    e.preventDefault();
-    const { searchTerm } = this.state;
-    this.getSearchMovies(searchTerm);
-  };
-
   handleSearchChange = e => {
     this.setState({
       searchTerm: e.target.value
@@ -39,13 +35,12 @@ class SearchBar extends Component {
   handleSearchSubmit = e => {
     e.preventDefault();
     const { searchTerm } = this.state;
-
-    // Do something with `searchTerm`
-    console.log(searchTerm);
+    this.getSearchMovies(searchTerm);
   };
 
   render() {
-    const { searchTerm } = this.state;
+    const { searchTerm, result } = this.state;
+    console.log(this.state);
 
     return (
       <div className="SearchBar-wrapper">
@@ -58,6 +53,14 @@ class SearchBar extends Component {
             value={searchTerm}
           />
         </form>
+        {result && (
+          <Redirect
+            to={{
+              pathname: `/search?query=${searchTerm}`,
+              state: { result, searchTerm }
+            }}
+          />
+        )}
       </div>
     );
   }
