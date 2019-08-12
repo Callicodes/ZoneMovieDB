@@ -9,14 +9,22 @@ class Filters extends Component {
   };
   render() {
     return (
-      <div>
+      <div
+        className={"App-filters " + (this.props.filtersOpen ? "is-open" : "")}
+      >
         <ul className="filters-list">
           <li className="filters-list__item">
+<<<<<<< HEAD
             <span className="filters-label">
               Rating from {this.state.filters.rating.min} to{" "}
               {this.state.filters.rating.max}
               Rating from {this.props.filters.rating.min} to{" "}
               {this.props.filters.rating.max}
+=======
+            <span className="filter-label">
+              Rating from {this.state.valueRating.min} to{" "}
+              {this.state.valueRating.max}
+>>>>>>> parent of 9e15788... Added Discover Component
             </span>
             <InputRange
               maxValue={10}

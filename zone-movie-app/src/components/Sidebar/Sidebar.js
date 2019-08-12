@@ -12,11 +12,6 @@ const Sidebar = () => {
             Popular
           </a> */}
           <NavLink exact={true} to="/" activeClassName="is-active">
-            Discover
-          </NavLink>
-        </li>
-        <li className="sidebar-menu__item">
-          <NavLink exact={true} to="/popular" activeClassName="is-active">
             Popular
           </NavLink>
         </li>
