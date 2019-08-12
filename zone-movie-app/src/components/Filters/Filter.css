@@ -25,6 +25,7 @@
 .filter-label {
   margin-bottom: 15px;
   display: block;
+  color: white;
 }
 
 .input-range__slider {

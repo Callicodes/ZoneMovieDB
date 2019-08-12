@@ -17,13 +17,11 @@ class Filters extends Component {
 
   render() {
     return (
-      <div
-        className={"App-filters " + (this.props.filtersOpen ? "is-open" : "")}
-      >
+      <div>
         <ul className="filters-list">
           <li className="filters-list__item">
             <span className="filter-label">
-              Rating from {this.state.valueRating.min} to{" "}
+              Rating from {this.state.valueRating.min + 1 - 0.5} to{" "}
               {this.state.valueRating.max}
             </span>
             <InputRange
