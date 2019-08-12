@@ -25,6 +25,18 @@ class App extends Component {
   toggleFilters = () => {
     this.setState({ filtersOpen: !this.state.filtersOpen });
   };
+
+  updateFilters = value => {
+    this.setState({
+      filters: {
+        rating: {
+          min: value.min,
+          max: value.max
+        }
+      }
+    });
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -33,7 +45,11 @@ class App extends Component {
           <div className="App-main">
             <div className="App-sidebar-wrapper">
               <Sidebar />
-              <Filter filtersOpen={this.state.filtersOpen} />
+              <Filter
+                filtersOpen={this.state.filtersOpen}
+                filters={this.state.filters}
+                updateFilters={this.updateFilters}
+              />
             </div>
             <div className="App-content-wrapper">
               {/* <Main title="Popular" /> */}

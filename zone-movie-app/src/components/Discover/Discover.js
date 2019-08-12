@@ -25,6 +25,10 @@ class Discover extends Component {
     this.getMovies(DEFAULT_PAGE);
   };
 
+  componentWillReceiveProps = nextProps => {
+    this.getMovies(DEFAULT_PAGE);
+  };
+
   getMovies = page => {
     fetch(
       `${PATH_BASE}${PATH_DISCOVER}${PATH_MOVIE}?language=en-US&api_key=${API_KEY}&${PATH_PAGE}${page}&primary_release_year=2017&vote_average.gte=8&vote_average.lte=10&sort_by=vote_average.asc`

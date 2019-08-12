@@ -4,32 +4,32 @@ import InputRange from "react-input-range";
 import "./Filter.css";
 
 class Filters extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      valueRating: {
-        min: 0,
-        max: 10
-      }
-    };
-  }
-
+  updateFilters = value => {
+    this.props.updateFilters(value);
+  };
   render() {
     return (
       <div>
         <ul className="filters-list">
           <li className="filters-list__item">
-            <span className="filter-label">
-              Rating from {this.state.valueRating.min + 1 - 0.5} to{" "}
-              {this.state.valueRating.max}
+            <span className="filters-label">
+              Rating from {this.state.filters.rating.min} to{" "}
+              {this.state.filters.rating.max}
+              Rating from {this.props.filters.rating.min} to{" "}
+              {this.props.filters.rating.max}
             </span>
             <InputRange
               maxValue={10}
               minValue={0}
-              value={this.state.valueRating}
-              onChange={value => this.setState({ valueRating: value })}
+              value={this.state.filters.rating}
+              onChange={value => this.setState({ filters: { rating: value } })}
               onChangeComplete={value => console.log(value)}
+            />
+            value={this.props.filters.rating}
+            onChange=
+            {value => {
+              this.updateFilters(value);
+            }}{" "}
             />
           </li>
         </ul>
